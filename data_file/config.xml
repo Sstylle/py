@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <info>
     <platforms>
-        <platforms>Windows</platforms>
-        <platforms>Linus</platforms>
-        <platforms>macOS</platforms>
+        <platform>Windows</platform>
+        <platform>Linus</platform>
+        <platform>macOS</platform>
     </platforms>
     <browsers>
         <browser>Firefox</browser>
