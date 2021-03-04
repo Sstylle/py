@@ -7,6 +7,7 @@ from time import sleep
 from itertools import islice
 from selenium import webdriver
 
+
 class TestBaidu(unittest.TestCase):
 
     @classmethod
@@ -19,7 +20,7 @@ class TestBaidu(unittest.TestCase):
         cls.test_data = []
         with codecs.open('../data_file/baidu_data.csv', 'r', 'GBK') as f:
             data = csv.reader(f)
-            for line in islice(data, 1,None):
+            for line in islice(data, 1, None):
                 cls.test_data.append(line)
 
     @classmethod
@@ -51,4 +52,3 @@ class TestBaidu(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
-

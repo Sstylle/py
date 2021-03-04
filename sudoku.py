@@ -1,9 +1,9 @@
 # coding:utf-8
 
 from random import randint
-from time import clock
+from time import perf_counter
 
-start = clock()
+start = perf_counter()
 sudo, hole = [[0 for i in range(9)] for i in range(9)], [[0 for i in range(9)] for i in range(9)]
 
 
@@ -78,4 +78,4 @@ if __name__ == '__main__':
         pass
     digHole(35)
     printSudo()
-    print('运行耗时：', clock() - start)
+    print('运行耗时：', perf_counter() - start)

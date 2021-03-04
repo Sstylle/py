@@ -13,10 +13,10 @@ for item in tag_name:
     print(item.firstChild.data)
 
 login_info = root.getElementsByTagName('login')
-usernames ,passwords = [],[]
+usernames, passwords = [], []
 for item in login_info:
     usernames.append(item.getAttribute('username'))
     passwords.append(item.getAttribute('password'))
 
 for username in usernames:
-    print(username,passwords[usernames.index(username)])
+    print(username, passwords[usernames.index(username)])
