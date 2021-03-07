@@ -19,7 +19,7 @@ def send_mail(report):
     print('email has send out !')
 
 test_dir = './test_case'
-suits = unittest.defaultTestLoader.discover(test_dir, pattern='test*.py')
+suits = unittest.defaultTestLoader.discover(test_dir, pattern='test_baidu_ddt.py')
 
 if __name__ == '__main__':
     now_time = time.strftime('%Y-%m-%d_%H-%M-%S')
@@ -29,4 +29,4 @@ if __name__ == '__main__':
     # runner = unittest.TextTestRunner()
     runner.run(suits)
     fp.close()
-    send_mail(html_report)
+    # send_mail(html_report)

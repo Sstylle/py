@@ -4,6 +4,20 @@ import unittest
 from time import sleep
 from selenium import webdriver
 from ddt import ddt, data, file_data, unpack
+import csv
+import codecs
+
+data_path = '../data_file/baidu_data.csv'
+
+def getCsvDate(path):
+    value = []
+    with codecs.open(path, 'r', 'GBK')as f:
+        data = csv.reader(f)
+        next(data)
+        for i in data:
+            value.append(i)
+        print(value)
+        return value
 
 
 @ddt
@@ -54,14 +68,24 @@ class TestBaidu(unittest.TestCase):
     #     self.baidu_search(search_key)
     #     self.assertEqual(self.driver.title, search_key + '_百度搜索')
 
-    @file_data('../data_file/ddt_data_file.yaml')
-    def test_search5(self, case):
-        print(case)
-        search_key = case[0]['search_key']
+    # @file_data('../data_file/ddt_data_file.yaml')
+    # def test_search5(self, case):
+    #     print(case)
+    #     search_key = case[0]['search_key']
+    #     print('第五组测试用例：', search_key)
+    #     self.baidu_search(search_key)
+    #     self.assertEqual(self.driver.title, search_key + '_百度搜索')
+
+    @data(*getCsvDate(data_path))
+    @unpack
+    def test_search5(self, name, search_keys):
+        search_key = search_keys
         print('第五组测试用例：', search_key)
         self.baidu_search(search_key)
         self.assertEqual(self.driver.title, search_key + '_百度搜索')
 
 
 if __name__ == '__main__':
+    data_path = './data_file/baidu_data.csv'
     unittest.main(verbosity=2)
+    '''问问别人'''

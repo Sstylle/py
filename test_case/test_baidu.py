@@ -3,6 +3,7 @@
 import unittest
 from time import sleep
 from selenium import webdriver
+from common.baidu_page import BaiduPage
 
 
 class TestBaidu(unittest.TestCase):
@@ -26,8 +27,13 @@ class TestBaidu(unittest.TestCase):
         # title = self.driver.title
         # self.assertEqual(title, 'selenium_百度搜索')
         search_key = 'selenium'
-        self.baidu_search(search_key)
-        self.assertEqual(self.driver.title, search_key + '_百度搜索')
+        # self.baidu_search(search_key)
+        # self.assertEqual(self.driver.title, search_key + '_百度搜索')
+        self.driver.get(self.base_url)
+        bd = BaiduPage(self.driver)
+        bd.search_input(search_key)
+        bd.search_button()
+
 
     def test_search_key_unittest(self):
         """试一下能不能看到注释"""
@@ -38,8 +44,11 @@ class TestBaidu(unittest.TestCase):
         # title = self.driver.title
         # self.assertEqual(title, 'unittest_百度搜索')
         search_key = 'unittest'
-        self.baidu_search(search_key)
-        self.assertEqual(self.driver.title, search_key + '_百度1搜索')
+        # self.baidu_search(search_key)
+        # self.assertEqual(self.driver.title, search_key + '_百度搜索')
+        bd = BaiduPage(self.driver)
+        bd.search_input(search_key)
+        bd.search_button()
 
     def baidu_search(self, search_key):
         self.driver.get(self.base_url)
