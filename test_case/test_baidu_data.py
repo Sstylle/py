@@ -18,7 +18,7 @@ class TestBaidu(unittest.TestCase):
         cls.driver = webdriver.Chrome(options=opt)
         cls.base_url = 'https://www.baidu.com'
         cls.test_data = []
-        with codecs.open('../data_file/baidu_data.csv', 'r', 'GBK') as f:
+        with codecs.open(report_path, 'r', 'GBK') as f:
             data = csv.reader(f)
             for line in islice(data, 1, None):
                 cls.test_data.append(line)
@@ -50,5 +50,8 @@ class TestBaidu(unittest.TestCase):
         self.baidu_search(self.test_data[2][1])
 
 
+report_path = './data_file/baidu_data.csv'
+
 if __name__ == '__main__':
+    report_path = '../data_file/baidu_data.csv'
     unittest.main(verbosity=2)

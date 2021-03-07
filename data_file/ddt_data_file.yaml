@@ -1,6 +1,6 @@
-one:
+case1:
   - search_key: "python"
-two:
+case2:
   - search_key: "ddt"
-three:
+case3:
   - search_key: "selenium"
