@@ -6,12 +6,16 @@ from selenium import webdriver
 from ddt import ddt, data, file_data, unpack
 import csv
 import codecs
+import sys
+import os
 
-data_path = '../data_file/baidu_data.csv'
+# print(sys.path)
+# print(type(os.path))
+data_path = sys.path[1].replace('\\', '/') + '/data_file/baidu_data.csv'
 
-def getCsvDate(path):
+def getCsvDate():
     value = []
-    with codecs.open(path, 'r', 'GBK')as f:
+    with codecs.open(data_path, 'r', 'GBK')as f:
         data = csv.reader(f)
         next(data)
         for i in data:
@@ -22,6 +26,9 @@ def getCsvDate(path):
 
 @ddt
 class TestBaidu(unittest.TestCase):
+
+    date = getCsvDate()
+    print(date)
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -76,16 +83,14 @@ class TestBaidu(unittest.TestCase):
     #     self.baidu_search(search_key)
     #     self.assertEqual(self.driver.title, search_key + '_百度搜索')
 
-    @data(*getCsvDate(data_path))
+    @data(*date)
     @unpack
     def test_search5(self, name, search_keys):
         search_key = search_keys
         print('第五组测试用例：', search_key)
-        self.baidu_search(search_key)
-        self.assertEqual(self.driver.title, search_key + '_百度搜索')
+        # self.baidu_search(search_key)
+        # self.assertEqual(self.driver.title, search_key + '_百度搜索')
 
 
 if __name__ == '__main__':
-    data_path = './data_file/baidu_data.csv'
     unittest.main(verbosity=2)
-    '''问问别人'''

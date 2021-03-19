@@ -16,6 +16,7 @@ class TestBaidu(unittest.TestCase):
         # opt.add_argument('--start-maximized')
         opt.add_argument('-window-size=1920x1080')
         self.driver = webdriver.Chrome(options=opt)
+        self.driver.implicitly_wait(4)
         self.base_url = 'http://www.baidu.com'
         # print(self.driver.get_window_size())
 
@@ -28,11 +29,14 @@ class TestBaidu(unittest.TestCase):
         # self.assertEqual(title, 'selenium_百度搜索')
         search_key = 'selenium'
         # self.baidu_search(search_key)
-        # self.assertEqual(self.driver.title, search_key + '_百度搜索')
         self.driver.get(self.base_url)
         bd = BaiduPage(self.driver)
+        sleep(1)
         bd.search_input(search_key)
         bd.search_button()
+        sleep(1)
+        self.assertEqual(self.driver.title, search_key + '_百度搜索')
+
 
 
     def test_search_key_unittest(self):

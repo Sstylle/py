@@ -8,7 +8,7 @@ class BasePage:
 
     def __init__(self, driver):
         self.driver = driver
-        self.driver = webdriver.Chrome()
+        # self.driver = webdriver.Chrome()
 
     def open(self, url=None):
         if url is None:

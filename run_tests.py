@@ -19,13 +19,13 @@ def send_mail(report):
     print('email has send out !')
 
 test_dir = './test_case'
-suits = unittest.defaultTestLoader.discover(test_dir, pattern='test_baidu_ddt.py')
+suits = unittest.defaultTestLoader.discover(test_dir, pattern='test*.py')
 
 if __name__ == '__main__':
     now_time = time.strftime('%Y-%m-%d_%H-%M-%S')
     html_report = './test_report/' + now_time + 'result.html'
     fp = open(html_report, 'wb')
-    runner = HTMLTestRunner(stream=fp, title='测试报告', description='这是描述啊', tester='苏少霖')
+    runner = HTMLTestRunner(stream=fp, title='测试报告', description='这是描述啊', tester='苏少霖', verbosity=2)
     # runner = unittest.TextTestRunner()
     runner.run(suits)
     fp.close()
