@@ -18,7 +18,7 @@ class TestBaidu(unittest.TestCase):
         cls.driver = webdriver.Chrome(options=opt)
         cls.base_url = 'https://www.baidu.com'
         cls.test_data = []
-        with codecs.open(report_path, 'r', 'GBK') as f:
+        with codecs.open(report_path, 'r', 'UTF-8') as f:
             data = csv.reader(f)
             for line in islice(data, 1, None):
                 cls.test_data.append(line)
