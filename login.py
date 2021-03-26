@@ -9,7 +9,7 @@ class Account(object):
         self.state = state
 
     def __str__(self):
-        return 'user：(%s)' % self.username
+        return 'user：%s' % self.username
 
 
 class AccountManage(object):
@@ -17,6 +17,7 @@ class AccountManage(object):
 
     def start(self):
         self.account.append(Account('sushaolin', '123456', '', 0))
+        # print(self.account[0])
 
     def Menu(self):
         while True:
