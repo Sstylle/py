@@ -10,13 +10,13 @@ class LeapYear:
         year = self.year
         if year % 100 == 0:
             if year % 400 == 0:
-                #整百年能被400整除的是闰年
+                # 整百年能被400整除的是闰年
                 return '{}是闰年'.format(year)
             else:
                 return '{}不是闰年'.format(year)
         else:
             if year % 4 == 0:
-                #非整百年能被4整除的是闰年
+                # 非整百年能被4整除的是闰年
                 return '{}是闰年'.format(year)
             else:
                 return '{}不是闰年'.format(year)

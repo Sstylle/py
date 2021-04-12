@@ -17,6 +17,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\inputscreen.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\login.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\pyproject.toml">
           <value>
             <Attribute>
@@ -31,7 +45,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\read_json.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\run_tests.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\send_email_yagmail.py">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -74,6 +102,13 @@
           </value>
         </entry>
         <entry key="\test_case\test_baidu_poium.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\zhizhen.py">
           <value>
             <Attribute>
               <option name="separator" value=":" />
