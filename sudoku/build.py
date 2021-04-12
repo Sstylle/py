@@ -53,6 +53,15 @@ def give_me_a_game(blank_size=9):
         i, j = int(ij.split(',')[0]), int(ij.split(',')[1])
         blank_ij.append((i, j))
         matrix_blank[i][j] = 0
+    print('matrix_all:')
+    for item in matrix_all:
+        print(item)
+    print('matrix_blank:')
+    for item in matrix_blank:
+        print(item)
+    print('blank_ij:')
+    for item in blank_ij:
+        print(item)
     return matrix_all, matrix_blank, blank_ij
 
 

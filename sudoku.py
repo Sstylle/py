@@ -78,4 +78,5 @@ if __name__ == '__main__':
         pass
     digHole(35)
     printSudo()
+    print(perf_counter(),start)
     print('运行耗时：', perf_counter() - start)
